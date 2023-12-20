@@ -21,4 +21,6 @@ return require('packer').startup(function(use)
 		  vim.cmd('colorscheme jellybeans')
 	  end
   })
+
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 end)

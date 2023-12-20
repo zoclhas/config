@@ -85,6 +85,11 @@ _G.packer_plugins = {
     path = "/home/zoc/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/zoc/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/zoc/.local/share/nvim/site/pack/packer/start/packer.nvim",
