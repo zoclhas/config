@@ -9,7 +9,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = { "tsserver", "pyright", "rust_analyzer" }, 
+	ensure_installed = { "tsserver", "pyright", "rust_analyzer", "tailwindcss" }, 
 	handlers = {
 		lsp.default_setup,
 	},
