@@ -50,7 +50,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       --  colorscheme = "jellybeans-nvim",
-      colorscheme = "kanagawa",
+      colorscheme = "kanagawa-wave",
     },
   },
 }
