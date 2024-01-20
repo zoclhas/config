@@ -20,6 +20,12 @@ return {
     "rebelot/kanagawa.nvim",
     config = function()
       require("kanagawa").setup({
+        compile = true,
+        undercurls = true,
+
+        transparent = true,
+        terminalColors = true,
+
         colors = {
           theme = {
             all = {
