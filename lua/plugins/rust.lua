@@ -83,21 +83,21 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        emmet_ls = {
-          filetypes = {
-            "html",
-            "typescriptreact",
-            "javascriptreact",
-            "css",
-            "sass",
-            "scss",
-            "less",
-            "javascript",
-            "typescript",
-            "markdown",
-            "rust",
-          },
-        },
+        -- emmet_ls = {
+        --   filetypes = {
+        --     "html",
+        --     "typescriptreact",
+        --     "javascriptreact",
+        --     "css",
+        --     "sass",
+        --     "scss",
+        --     "less",
+        --     "javascript",
+        --     "typescript",
+        --     "markdown",
+        --     "rust",
+        --   },
+        -- },
         -- Ensure mason installs the server
         rust_analyzer = {
           keys = {

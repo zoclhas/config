@@ -13,3 +13,5 @@ map("i", "<C-l>", "<Right>")
 map("i", "<C-b>", "<Home>", { desc = "Go to beginning of line" })
 map("i", "<C-B>", "<Home>", { desc = "Go to beginning of line" })
 map("i", "<C-e>", "<End>", { desc = "Go to end of line" })
+
+map("i", "<C-v>", "<CR><ESC>O", { desc = "Place cursor inbetween the tags on a new line" })
