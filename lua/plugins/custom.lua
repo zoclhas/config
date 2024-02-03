@@ -180,7 +180,9 @@ return {
     },
     opts = {
       history = true,
-      delete_check_events = "TextChanged",
+      updateevents = "TextChanged,TextChangedI",
+      region_check_events = "InsertEnter",
+      delete_check_events = "TextChanged,InsertLeave",
     },
   -- stylua: ignore
   keys = {

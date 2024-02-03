@@ -16,3 +16,5 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 opt.scrolloff = 8
+
+opt.wrap = true
