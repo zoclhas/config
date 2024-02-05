@@ -140,4 +140,5 @@ return {
       })
     end,
   },
+  { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
 }
