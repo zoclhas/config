@@ -95,7 +95,7 @@ return {
             -- "javascript",
             -- "typescript",
             "markdown",
-            "rust",
+            -- "rust",
           },
         },
         -- Ensure mason installs the server

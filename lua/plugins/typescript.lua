@@ -128,6 +128,21 @@ return {
       end
     end,
   },
+  {
+    "js-everts/cmp-tailwind-colors",
+    opts = function()
+      require("cmp-tailwind-colors").setup({
+        enable_alpha = true,
+
+        format = function(itemColor)
+          return {
+            fg = itemColor,
+            bg = itemColor,
+          }
+        end,
+      })
+    end,
+  },
 
   {
     "laytan/tailwind-sorter.nvim",
