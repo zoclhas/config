@@ -82,7 +82,7 @@ return {
           filetypes_exclude = { "markdown" },
           settings = {
             tailwindCSS = {
-              includeLanguages = { "rust" },
+              includeLanguages = { "rust", "typescript", "javascript", "html", "css" },
             },
           },
         },

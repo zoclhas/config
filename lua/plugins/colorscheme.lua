@@ -19,11 +19,19 @@ return {
   {
     "rebelot/kanagawa.nvim",
     config = function()
+      local function ternary(cond, T, F)
+        if cond then
+          return T
+        else
+          return F
+        end
+      end
+
       require("kanagawa").setup({
         compile = true,
         undercurls = true,
 
-        transparent = true,
+        transparent = ternary(vim.g.neovide, false, true),
         terminalColors = true,
 
         colors = {
@@ -56,7 +64,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       --  colorscheme = "jellybeans-nvim",
-      colorscheme = "kanagawa-wave",
+      colorscheme = "kanagawa-dragon",
     },
   },
 }

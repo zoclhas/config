@@ -62,6 +62,12 @@ return {
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
       "lukas-reineke/cmp-under-comparator",
+      {
+        "Exafunction/codeium.nvim",
+        cmd = "Codeium",
+        build = ":Codeium Auth",
+        opts = {},
+      },
     },
     opts = function(_, opts)
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
@@ -75,11 +81,15 @@ return {
         end,
       }
       table.insert(opts.sources, { name = "luasnip" })
+      table.insert(opts.sources, 1, {
+        name = "codeium",
+        group_index = 1,
+        priority = 100,
+      })
 
       return {
-        completion = {
-          completeopt = "menu,menuone,noinsert",
-        },
+        completeopt = "menu,menuone,noinsert",
+        completion = {},
         mapping = cmp.mapping.preset.insert({
           ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -187,19 +197,19 @@ return {
   -- stylua: ignore
   keys = {
     {
-      "<tab>",
+      "<Tab>",
       function()
         return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
       end,
       expr = true, silent = true, mode = "i",
     },
-    { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
-    { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
+    { "<Tab>", function() require("luasnip").jump(1) end, mode = "s" },
+    { "<S-Tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
   },
   },
   {
     "norcalli/nvim-colorizer.lua",
-    config = function()
+    opts = function()
       require("colorizer").setup({
         filetypes = { "*" },
         user_default_options = {
@@ -216,7 +226,7 @@ return {
           mode = "background", -- Set the display mode.
           -- Available methods are false / true / "normal" / "lsp" / "both"
           -- True is same as normal
-          tailwind = true, -- Enable tailwind colors
+          -- tailwind = true, -- Enable tailwind colors
           -- parsers can contain values used in |user_default_options|
           sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
           virtualtext = "■",
@@ -268,6 +278,21 @@ return {
           }),
         },
       })
+    end,
+  },
+
+  {
+    "Exafunction/codeium.nvim",
+    cmd = "Codeium",
+    build = ":Codeium Auth",
+    opts = {},
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    optional = true,
+    event = "VeryLazy",
+    opts = function(_, opts)
+      table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("codeium"))
     end,
   },
 }
